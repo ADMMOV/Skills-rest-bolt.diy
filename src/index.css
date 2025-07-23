@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --background: 264 70% 5%; /* Deep Purple-Black */
+    --foreground: 240 5% 90%; /* Light Gray */
+
+    --card: 264 50% 8%;
+    --card-foreground: 240 5% 90%;
+ 
+    --popover: 264 70% 5%;
+    --popover-foreground: 240 5% 90%;
+ 
+    --primary: 180 100% 50%; /* Cyan */
+    --primary-foreground: 264 70% 5%;
+ 
+    --secondary: 328 100% 54%; /* Magenta/Pink */
+    --secondary-foreground: 0 0% 100%;
+ 
+    --muted: 264 30% 15%;
+    --muted-foreground: 240 5% 60%;
+ 
+    --accent: 264 30% 15%;
+    --accent-foreground: 0 0% 98%;
+ 
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 180 100% 50% / 0.3; /* Semi-transparent Cyan */
+    --input: 264 30% 15%;
+    --ring: 180 100% 50%;
+ 
+    --radius: 0.5rem;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+  #root {
+    isolation: isolate;
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      linear-gradient(hsl(var(--primary) / 0.05) 1px, transparent 1px),
+      linear-gradient(to right, hsl(var(--primary) / 0.05) 1px, transparent 1px);
+    background-size: 3rem 3rem;
+    opacity: 0.5;
+    z-index: -10;
+    mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, black, transparent 70%);
+  }
+}
