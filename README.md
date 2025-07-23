@@ -1,4 +1,6 @@
-# Hospitality Staffing Connect (MVP)
+# Skills-rest-bolt.diy
+
+> This project is currently being redesigned for a modern, black-themed, high-contrast look. The design is a prototype and subject to further iteration and polish.
 
 This project is a web application to efficiently connect job seekers looking for flexible, temporary hospitality work with businesses in need of reliable temporary staff.
 

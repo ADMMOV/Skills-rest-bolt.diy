@@ -7,7 +7,7 @@ import ActiveJobPost from '@/components/dashboard/employer/ActiveJobPost';
 
 const EmployerDashboardPage = () => {
   return (
-    <div className="min-h-screen text-foreground p-4 sm:p-6 lg:p-8">
+    <div className="min-h-screen bg-black text-white glass-section p-4 sm:p-6 lg:p-8">
       <div className="max-w-7xl mx-auto">
         <motion.header
           initial={{ opacity: 0, y: -20 }}
@@ -16,14 +16,14 @@ const EmployerDashboardPage = () => {
           className="flex flex-col md:flex-row justify-between md:items-center gap-4 mb-8"
         >
           <div>
-            <h1 className="text-4xl tracking-tight text-foreground">
+            <h1 className="text-4xl tracking-tight neon-text">
               Welcome, {mockEmployer.businessName}!
             </h1>
-            <p className="mt-1 text-muted-foreground">
+            <p className="mt-1 text-white/70">
               Here's what's happening with your team today.
             </p>
           </div>
-          <Button size="lg" variant="secondary" className="group">
+          <Button size="lg" variant="secondary" className="group glass-card shadow-lg">
             <PlusCircle className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
             Post New Job
           </Button>

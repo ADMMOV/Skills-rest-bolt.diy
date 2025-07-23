@@ -6,17 +6,17 @@ import AppliedJobsSummary from '@/components/dashboard/job-seeker/AppliedJobsSum
 
 const JobSeekerDashboardPage = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground p-4 sm:p-6 lg:p-8">
+    <div className="min-h-screen bg-black text-white glass-section p-4 sm:p-6 lg:p-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-3xl font-bold tracking-tight text-foreground">
+          <h1 className="text-3xl font-bold tracking-tight neon-text">
             Hi, {mockJobSeeker.name}!
           </h1>
-          <p className="mt-1 text-muted-foreground">
+          <p className="mt-1 text-white/70">
             Here are the latest shifts available for you. Let's get to work.
           </p>
         </motion.div>

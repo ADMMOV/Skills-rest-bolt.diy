@@ -6,35 +6,35 @@
  
 @layer base {
   :root {
-    --background: 264 70% 5%; /* Deep Purple-Black */
-    --foreground: 240 5% 90%; /* Light Gray */
+    --background: 0 0% 6%; /* Black */
+    --foreground: 0 0% 98%; /* White */
 
-    --card: 264 50% 8%;
-    --card-foreground: 240 5% 90%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 98%;
  
-    --popover: 264 70% 5%;
-    --popover-foreground: 240 5% 90%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 98%;
  
-    --primary: 180 100% 50%; /* Cyan */
-    --primary-foreground: 264 70% 5%;
+    --primary: 220 100% 60%; /* Electric Blue */
+    --primary-foreground: 0 0% 98%;
  
-    --secondary: 328 100% 54%; /* Magenta/Pink */
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 295 100% 60%; /* Magenta */
+    --secondary-foreground: 0 0% 98%;
  
-    --muted: 264 30% 15%;
-    --muted-foreground: 240 5% 60%;
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 60%;
  
-    --accent: 264 30% 15%;
+    --accent: 220 100% 60%;
     --accent-foreground: 0 0% 98%;
  
     --destructive: 0 63% 31%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 180 100% 50% / 0.3; /* Semi-transparent Cyan */
-    --input: 264 30% 15%;
-    --ring: 180 100% 50%;
+    --border: 0 0% 98% / 0.08;
+    --input: 0 0% 18%;
+    --ring: 220 100% 60%;
  
-    --radius: 0.5rem;
+    --radius: 0.75rem;
   }
 }
  
@@ -45,11 +45,14 @@
   body {
     @apply bg-background text-foreground;
     min-height: 100vh;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', 'Audiowide', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    background: linear-gradient(120deg, hsl(var(--background)), hsl(var(--background)) 60%, hsl(var(--primary) / 0.08) 100%);
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-display;
+    letter-spacing: 0.01em;
+    font-weight: 800;
   }
   #root {
     isolation: isolate;
@@ -64,12 +67,35 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: 
-      linear-gradient(hsl(var(--primary) / 0.05) 1px, transparent 1px),
-      linear-gradient(to right, hsl(var(--primary) / 0.05) 1px, transparent 1px);
-    background-size: 3rem 3rem;
-    opacity: 0.5;
+    background: radial-gradient(ellipse 80% 50% at 50% 0%, hsl(var(--primary) / 0.12), transparent 70%),
+                linear-gradient(120deg, hsl(var(--secondary) / 0.10) 0%, transparent 80%);
+    opacity: 0.7;
     z-index: -10;
     mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, black, transparent 70%);
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: linear-gradient(120deg, hsl(var(--card) / 0.7), hsl(var(--card) / 0.5));
+    box-shadow: 0 8px 32px 0 hsl(var(--primary) / 0.10), 0 1.5px 8px 0 hsl(var(--secondary) / 0.10);
+    backdrop-filter: blur(16px) saturate(120%);
+    border-radius: var(--radius);
+    border: 1.5px solid hsl(var(--border));
+  }
+  .glass-section {
+    background: linear-gradient(120deg, hsl(var(--background) / 0.8), hsl(var(--primary) / 0.08));
+    box-shadow: 0 4px 24px 0 hsl(var(--primary) / 0.08);
+    border-radius: var(--radius);
+    backdrop-filter: blur(8px) saturate(120%);
+  }
+  .neon-text {
+    text-shadow: 0 0 8px hsl(var(--primary) / 0.7), 0 0 2px hsl(var(--primary) / 0.5);
+  }
+  .frosted {
+    background: linear-gradient(120deg, hsl(var(--background) / 0.7), hsl(var(--secondary) / 0.08));
+    backdrop-filter: blur(12px) saturate(120%);
+    border-radius: var(--radius);
+    border: 1.5px solid hsl(var(--border));
   }
 }

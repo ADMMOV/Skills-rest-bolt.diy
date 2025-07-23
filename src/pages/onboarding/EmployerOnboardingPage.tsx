@@ -20,18 +20,18 @@ const EmployerOnboardingPage = () => {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background p-4">
+    <div className="flex min-h-screen items-center justify-center glass-section p-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="w-full max-w-lg"
+        className="w-full max-w-lg glass-card shadow-xl"
       >
         <div className="text-center">
-          <h1 className="text-3xl font-bold tracking-tight text-foreground">
+          <h1 className="text-3xl font-bold tracking-tight neon-text">
             Set Up Your Employer Profile
           </h1>
-          <p className="mt-2 text-muted-foreground">
+          <p className="mt-2 text-white/70">
             Tell us about your business to find the best talent.
           </p>
         </div>

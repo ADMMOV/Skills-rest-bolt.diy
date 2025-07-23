@@ -17,48 +17,45 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center p-4">
+    <div className="min-h-screen w-full flex items-center justify-center glass-section p-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="w-full max-w-md space-y-8"
+        className="w-full max-w-md space-y-8 glass-card shadow-xl"
       >
         <div className="text-center">
-          <ChefHat className="mx-auto h-12 w-12 text-secondary" />
-          <h1 className="mt-4 text-4xl tracking-wider text-foreground">
+          <ChefHat className="mx-auto h-12 w-12 text-primary neon-text" />
+          <h1 className="mt-4 text-4xl tracking-wider neon-text">
             Get Connected
           </h1>
-          <p className="mt-2 text-muted-foreground">
+          <p className="mt-2 text-white/70">
             Sign in or create an account to get started.
           </p>
         </div>
-
         <div className="space-y-4">
-          <Button size="lg" className="w-full gap-3 bg-white text-black hover:bg-gray-200 shadow-none" onClick={() => handleSocialLogin('Google')}>
+          <Button size="lg" className="w-full gap-3 glass-card bg-white text-black hover:bg-white/80 shadow-lg" onClick={() => handleSocialLogin('Google')}>
             <GoogleIcon /> Continue with Google
           </Button>
-          <Button size="lg" className="w-full gap-3 bg-[#1877F2] text-white hover:bg-[#166eeb] shadow-none" onClick={() => handleSocialLogin('Facebook')}>
+          <Button size="lg" className="w-full gap-3 glass-card bg-[#1877F2] text-white hover:bg-[#166eeb] shadow-lg" onClick={() => handleSocialLogin('Facebook')}>
             <FacebookIcon /> Continue with Facebook
           </Button>
         </div>
-
         <div className="relative">
           <div className="absolute inset-0 flex items-center">
-            <span className="w-full border-t border-border" />
+            <span className="w-full border-t border-white/20" />
           </div>
           <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-background px-2 text-muted-foreground">
+            <span className="bg-black px-2 text-white/50">
               Or
             </span>
           </div>
         </div>
-
         <div className="space-y-4">
-           <Button size="lg" variant="secondary" className="w-full gap-3" onClick={() => handleSocialLogin('Email')}>
+           <Button size="lg" variant="secondary" className="w-full gap-3 glass-card bg-white/10 text-white hover:bg-white/20 shadow-lg" onClick={() => handleSocialLogin('Email')}>
             <Mail className="h-5 w-5" /> Continue with Email
           </Button>
-          <Button size="lg" variant="outline" className="w-full gap-3" onClick={() => handleSocialLogin('SignUp')}>
+          <Button size="lg" variant="outline" className="w-full gap-3 border-white/30 text-white hover:bg-white/10 glass-card shadow-lg" onClick={() => handleSocialLogin('SignUp')}>
             <UserPlus className="h-5 w-5" /> Sign Up
           </Button>
         </div>

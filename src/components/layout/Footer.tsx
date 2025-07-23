@@ -9,23 +9,23 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-card/20 border-t border-border/40">
+    <footer className="bg-black border-t border-white/10">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="flex flex-col">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <ChefHat className="h-8 w-8 text-primary" />
-              <span className="font-bold text-xl text-foreground">Staffing Connect</span>
+              <ChefHat className="h-8 w-8 text-white" />
+              <span className="font-bold text-xl text-white">Staffing Connect</span>
             </Link>
-            <p className="text-muted-foreground">The future of hospitality staffing.</p>
+            <p className="text-white/60">The future of hospitality staffing.</p>
           </div>
           {footerLinks.map((section) => (
             <div key={section.title}>
-              <h3 className="font-bold text-foreground mb-4">{section.title}</h3>
+              <h3 className="font-bold text-white mb-4">{section.title}</h3>
               <ul className="space-y-2">
                 {section.links.map((link) => (
                   <li key={link}>
-                    <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                    <a href="#" className="text-white/60 hover:text-white transition-colors">
                       {link}
                     </a>
                   </li>
@@ -34,7 +34,7 @@ const Footer = () => {
             </div>
           ))}
         </div>
-        <div className="mt-12 pt-8 border-t border-border/40 text-center text-muted-foreground">
+        <div className="mt-12 pt-8 border-t border-white/10 text-center text-white/40">
           <p>&copy; {new Date().getFullYear()} Hospitality Staffing Connect. All rights reserved.</p>
         </div>
       </div>
